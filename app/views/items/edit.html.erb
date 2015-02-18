@@ -1,0 +1,5 @@
+<h1 class="page-header">Edit Menu Item</h1>
+<%= render 'form' %>
+<p>
+  <%= link_to "Delete This Menu Item", item_path(@item), :confirm => "Are you sure?", :method => :delete %>
+</p>

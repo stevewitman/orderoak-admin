@@ -1,0 +1,9 @@
+<h1 class="page-header">Menu Item</h1>
+
+<p><strong><%= @item.name %> - </strong>
+<%= @item.description %></p>
+<p>$ <%= @item.price %></p>
+<p>In Stock: <%= @item.in_stock %>
+<br><br>
+<%= link_to "Back", items_path %> |
+<%= link_to "Edit", edit_item_path(@item.id) %>
