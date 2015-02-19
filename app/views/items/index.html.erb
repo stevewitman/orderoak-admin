@@ -4,6 +4,7 @@
 <div class="item">
   <p><strong><%= link_to item.name, item %> - </strong>
   <%= "#{item.description}" %></p>
+  <img src="<%= item.photo.small_thumb.url %>">
   <p>$ <%= "#{item.price}" %></p>
   <p>In Stock: <%= "#{item.in_stock}" %>
   <br><br>
