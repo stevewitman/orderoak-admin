@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.10'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', '~> 2.13.4'
 gem 'fog'
 
 group :development, :test do
