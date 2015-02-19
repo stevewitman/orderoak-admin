@@ -1,0 +1,16 @@
+# https://quickleft.com/blog/simple-rails-app-configuration-settings/
+defaults: &defaults
+  email: dev@example.com
+  AWS_SECRET:
+  AWS_ACCESS_KEY:
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  email: test@example.com
+
+production:
+  <<: *defaults
+  email: info@example.com

@@ -9,6 +9,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.10'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
