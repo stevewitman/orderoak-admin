@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "pages#index"
-  resources :items
   resources :users
+  resources :stores do
+    resources :menuitems
+  end
 
   get '/sign-up' => 'registration#new', as: :signup
   post '/sign-up' => 'registration#create'

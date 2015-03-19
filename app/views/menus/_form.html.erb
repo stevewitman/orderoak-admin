@@ -1,0 +1,25 @@
+<%= form_for [@store, @menu], :html => {class: 'form-horizontal'} do |f| %>
+
+  <div class="form-group">
+    <div class="col-sm-1">
+      <%= f.label :group, class: 'control-label' %>
+    </div>
+    <div class="col-sm-3">
+      <%= f.text_field :group, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-3 text-right">
+        <%= link_to "Cancel", store_path(@store), class: "btn btn-warning" %>&nbsp;&nbsp;&nbsp;
+        <%= f.submit nil, class: 'btn btn-default btn-success' %>
+      </div>
+
+    </div>
+  </div>
+
+<% end %>

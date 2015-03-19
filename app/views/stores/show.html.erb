@@ -1,0 +1,46 @@
+<%= page_header "#{@store.name}" do %>
+  <%= link_to "Back", stores_path(@store), class: "btn btn-warning" %>
+  <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Show Store Details
+  </button>
+  <%= link_to "Add New Menu Item", new_store_menuitem_path(@store), class: "btn btn-success" %>
+<% end %>
+
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    <address>
+      <div class="pull-right">
+        <%= link_to 'Edit Store Details', edit_store_path(@store), class: "btn btn-success" %>
+        <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          X
+        </button>
+      </div>
+      <strong><%= @store.name %></strong><br>
+      <%= "#{@store.address}, #{@store.city}, #{@store.state} #{@store.zip}" %><br>
+      <%= @store.phone %><br>
+    </address>
+    <address>
+      <%= @store.url %><br>
+      <%= "#{@store.latitude}, #{@store.longitude}" %><br>
+    </address>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <% @menuitems.each do |group| %>
+      <div class="panel panel-success">
+        <div class="panel-heading text-center">
+          <h3><%= group[0].menugroup[1..-1] %></h3>
+        </div>
+        <div class="panel-body">
+          <% group.each do |item| %>
+            <p>
+              <span class="item-name"><%= item.name %></span><span class="item-price">$<%= (item.price)/100 %></span><br>
+              <%= item.description %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

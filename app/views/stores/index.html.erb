@@ -1,0 +1,15 @@
+<%= page_header "Restaurants" do %>
+  <%= link_to "Back", root_path, class: "btn btn-default" %>&nbsp;&nbsp;&nbsp;
+  <%= link_to 'Add New Restaurant', new_store_path, class: "btn btn-default" %>
+<% end %>
+
+
+<% @stores.each do |store| %>
+  <div class="store">
+    <h3><%= link_to store.name, store %></h3>
+    <span class="store-address"><%= "#{store.address}" %></span><br>
+    <span class="store-address"><%= "#{store.city}, #{store.state} #{store.zip}" %></span><br>
+    <span class="store-phone"><%= "#{store.phone}" %></span><br>
+    <span class="store-url"><%= "#{store.url}" %></span><br>
+  </div>
+<% end %>

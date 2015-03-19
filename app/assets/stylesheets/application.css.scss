@@ -16,3 +16,21 @@
  *= require_tree .
  *= require_self
  */
+.navbar-inverse
+{
+  background-color: #419641;
+  border-color: #419641;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFF;
+}
+.navbar-inverse .navbar-brand {
+  color: #FFF;
+}
+.item-name {
+  font-weight: bold;
+}
+.item-price {
+  font-weight: bold;
+  float: right;
+}
