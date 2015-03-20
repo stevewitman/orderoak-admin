@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#index"
+  root "stores#index"
   resources :users
   resources :stores do
     resources :menuitems
