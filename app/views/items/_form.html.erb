@@ -1,47 +1,47 @@
-<%= form_for @item, :html => {:class => 'form-horizontal'} do |f| %>
+<%= form_for @item, :html => {class: 'form-horizontal'} do |f| %>
 
   <div class="form-group">
     <div class="col-sm-1">
-      <%= f.label :name, :class => 'control-label' %>
+      <%= f.label :name, class: 'control-label' %>
     </div>
     <div class="col-sm-5">
-      <%= f.text_field :name, :class => "form-control" %>
+      <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-1">
-      <%= f.label :description, :class => 'control-label' %>
+      <%= f.label :description, class: 'control-label' %>
     </div>
     <div class="col-sm-5">
-      <%= f.text_area :description, :class => "form-control" %>
+      <%= f.text_area :description, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-1">
-      <%= f.label :price, :class => 'control-label' %>
+      <%= f.label :price, class: 'control-label' %>
     </div>
     <div class="col-sm-5">
-      <%= f.text_field :price, :class => "form-control" %>
+      <%= f.text_field :price, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-1">
-      <%= f.label :photo, :class => 'control-label' %>
+      <%= f.label :photo, class: 'control-label' %>
     </div>
     <div class="col-sm-5">
-      <%= f.file_field :photo, :class => "form-control" %>
+      <%= f.file_field :photo, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-1">
-      <%= f.label :in_stock, :class => 'control-label' %>
+      <%= f.label :in_stock, class: 'control-label' %>
     </div>
     <div class="col-sm-5">
-      <%= f.check_box :in_stock, :class => "form-control" %>
+      <%= f.check_box :in_stock, class: "form-control" %>
     </div>
   </div>
 
@@ -49,7 +49,7 @@
     <div class="col-sm-1">
     </div>
     <div class="col-sm-5">
-        <%= f.submit nil, :class => 'btn btn-default btn-primary' %>
+        <%= f.submit nil, class: 'btn btn-default btn-primary' %>
     </div>
   </div>
 <% end %>

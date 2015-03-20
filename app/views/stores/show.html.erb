@@ -1,16 +1,16 @@
-<%= page_header "#{@store.name}" do %>
-  <%= link_to "Back", stores_path(@store), class: "btn btn-warning" %>
+<%= page_header "#{@store.name} Menu" do %>
+  <%= link_to "Back", stores_path(@store), class: "btn btn-default" %>
   <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Show Store Details
   </button>
-  <%= link_to "Add New Menu Item", new_store_menuitem_path(@store), class: "btn btn-success" %>
+  <%= link_to "Add New Menu Item", new_store_menuitem_path(@store), class: "btn btn-default" %>
 <% end %>
 
 <div class="collapse" id="collapseExample">
   <div class="well">
     <address>
       <div class="pull-right">
-        <%= link_to 'Edit Store Details', edit_store_path(@store), class: "btn btn-success" %>
+        <%= link_to 'Edit Store Details', edit_store_path(@store), class: "btn btn-default" %>
         <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           X
         </button>
@@ -35,7 +35,8 @@
         <div class="panel-body">
           <% group.each do |item| %>
             <div class="menuitem">
-              <span class="item-name"><%= link_to item.name, edit_store_menuitem_path(@store, item) %></span><span class="item-price">$<%= (item.price)/100 %></span><br>
+              <span class="item-name"><%= link_to item.name, edit_store_menuitem_path(@store, item) %></span>
+              <span class="item-price">$<%= "%.2f" % (item.price / 100.0) %></span><br>
               <%= item.description %>
             </div>
           <% end %>

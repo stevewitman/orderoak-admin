@@ -28,7 +28,7 @@ class MenuitemsController < ApplicationController
 
   def update
     if @menuitem.update(menuitem_params)
-      redirect_to store_path@store, notice: 'Menu Item was updated successfully.'
+      redirect_to store_path(@store), notice: 'Menu Item was updated successfully.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class MenuitemsController < ApplicationController
 
   def destroy
     @menuitem.destroy
-    redirect_to menuitems_path, notice: 'Menu Item was deleted successfully.'
+    redirect_to store_path(@store), notice: 'Menu Item was deleted successfully.'
   end
 
 private

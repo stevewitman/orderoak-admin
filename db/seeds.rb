@@ -72,7 +72,7 @@ Menuitem.create!(
 Menuitem.create!(
   store_id: store2.id,
   menugroup: "1Appetizers",
-  name: "Patato Skins",
+  name: "Potato Skins",
   description: "",
   price: 495,
   in_stock: true,

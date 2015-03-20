@@ -30,11 +30,15 @@ class StoresController < ApplicationController
 
   def update
     if @store.update(store_params)
-
       redirect_to store_path(@store), notice: 'Restaurant was updated successfully.'
     else
       render :edit
     end
+  end
+
+  def destroy
+    @store.destroy
+    redirect_to stores_path, notice: 'Restaurant was successfully deleted.'
   end
 
 private
