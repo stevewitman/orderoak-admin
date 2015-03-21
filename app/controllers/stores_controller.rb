@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  before_action :authorize_admin
+  before_action :authorize_manager, except: [:index]
   before_action :set_store, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,6 +10,8 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
     @menuitems = @store.menuitems.all
     @menuitems = @menuitems.group_by { |obj| obj.menugroup }.values
+    p "********************"
+    p @menuitems
   end
 
   def new

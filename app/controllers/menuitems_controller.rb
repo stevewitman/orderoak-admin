@@ -1,5 +1,5 @@
 class MenuitemsController < ApplicationController
-  before_action :authorize_admin
+  before_action :authorize_manager
   before_action :set_store
   before_action :set_menuitem, only: [:show, :edit, :update, :destroy]
 
