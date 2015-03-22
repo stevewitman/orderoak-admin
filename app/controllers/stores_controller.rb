@@ -8,11 +8,19 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find(params[:id])
-    @menuitems = @store.menuitems.all
-    @menuitems = @menuitems.group_by { |obj| obj.menugroup }.values
-    p "********************"
-    p @menuitems
-  end
+    @menu = {}
+    if @store.menugroups != ""
+      @menugroups = @store.menugroups.split(',')
+      @menugroups.each do |menugroup|
+        menuitems = @store.menuitems.where(menugroup: menugroup).order(:position)
+        @menu[menugroup] = menuitems
+        p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+        p @menu
+        p "******************************"
+
+      end
+    end
+  end 
 
   def new
     @store = Store.new

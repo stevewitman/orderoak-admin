@@ -76,7 +76,7 @@ Menuitem.create!(
   price: 395,
   in_stock: true,
   photo: "",
-  position: 1
+  position: 3
 )
 
 Menuitem.create!(
@@ -98,7 +98,7 @@ Menuitem.create!(
   price: 495,
   in_stock: true,
   photo: "",
-  position: 3
+  position: 1
 )
 
 Menuitem.create!(
@@ -109,7 +109,7 @@ Menuitem.create!(
   price: 895,
   in_stock: true,
   photo: "restaurant-2.jpg",
-  position: 1
+  position: 2
 )
 
 Menuitem.create!(
@@ -120,7 +120,7 @@ Menuitem.create!(
   price: 795,
   in_stock: true,
   photo: "restaurant-2.jpg",
-  position: 2
+  position: 1
 )
 
 Menuitem.create!(
