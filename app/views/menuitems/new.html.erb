@@ -1,4 +1,5 @@
 <%= page_header "Add New Menu Item" do %>
+  <%= link_to 'Add/Edit Menu Groups', edit_store_path(@store), class: "btn btn-default" %>&nbsp;&nbsp;&nbsp;
   <%= link_to "Cancel", store_path(@store), class: "btn btn-default" %>
 <% end %>
 <%= render 'form' %>

@@ -14,13 +14,9 @@ class StoresController < ApplicationController
       @menugroups.each do |menugroup|
         menuitems = @store.menuitems.where(menugroup: menugroup).order(:position)
         @menu[menugroup] = menuitems
-        p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-        p @menu
-        p "******************************"
-
       end
     end
-  end 
+  end
 
   def new
     @store = Store.new
@@ -58,7 +54,7 @@ private
   end
 
   def store_params
-    params.require(:store).permit(:name, :address, :city, :state, :zip, :phone, :url, :latitude, :longitude)
+    params.require(:store).permit(:name, :address, :city, :state, :zip, :phone, :url, :latitude, :longitude, :menugroups)
   end
 
 end

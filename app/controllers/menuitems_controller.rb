@@ -1,6 +1,7 @@
 class MenuitemsController < ApplicationController
   before_action :authorize_manager
   before_action :set_store
+  before_action :set_menugroups, only: [:new, :edit]
   before_action :set_menuitem, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -58,5 +59,13 @@ private
   def menuitem_params
     params.require(:menuitem).permit(:store_id, :menugroup, :name, :description, :price, :in_stock, :photo, :position)
   end
+
+  def set_menugroups
+    if @store.menugroups != ""
+      @menugroups = @store.menugroups.split(',')
+    end
+  end
+
+
 
 end
