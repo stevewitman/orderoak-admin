@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   post '/sign-in' => 'authentication#create'
   get '/sign-out' => 'authentication#destroy', as: :signout
 
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      resources :stores
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
