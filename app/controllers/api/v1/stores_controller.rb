@@ -14,12 +14,13 @@ class API::V1::StoresController < ApplicationController
     if @store.menugroups != ""
       @menugroups = @store.menugroups.split(',')
       @menugroups.each do |menugroup|
-        menuitems = @store.menuitems.where(menugroup: menugroup).order(:position)
+        menuitems = @store.menuitems.where(menugroup: menugroup).order(:position).pluck(:id, :name, :description, :price)
+
         @menu[menugroup] = menuitems
       end
     end
     respond_to do |format|
-      format.json { render :json => @menu }
+      format.json { render json: @menu}
     end
   end
 
