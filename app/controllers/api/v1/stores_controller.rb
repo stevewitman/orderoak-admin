@@ -13,12 +13,22 @@ class API::V1::StoresController < ApplicationController
   def show
     @store = Store.find(params[:id])
     @menu = {}
+
     if @store.menugroups != ""
       @menugroups = @store.menugroups.split(',')
       @menugroups.each do |menugroup|
         menuitems = @store.menuitems.where(menugroup: menugroup).order(:position).pluck(:id, :name, :description, :price)
+        menuitems_array = []
+        menuitems.each do |menuitem|
+          menuitem_hash = {}
+          menuitem_hash["item_id"] = menuitem[0]
+          menuitem_hash["name"] = menuitem[1]
+          menuitem_hash["description"] = menuitem[2]
+          menuitem_hash["price"] = menuitem[3]
+          menuitems_array << menuitem_hash
+        end
+        @menu[menugroup] = menuitems_array
 
-        @menu[menugroup] = menuitems
       end
     end
     respond_to do |format|
