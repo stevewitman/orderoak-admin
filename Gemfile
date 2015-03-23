@@ -12,6 +12,7 @@ gem 'bcrypt', '~> 3.1.10'
 gem 'carrierwave'
 gem 'rmagick', '~> 2.13.4'
 gem 'fog'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug'
